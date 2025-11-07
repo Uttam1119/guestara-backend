@@ -156,6 +156,7 @@ exports.getItemsBySubcategory = async (req, res, next) => {
 exports.getItemByIdOrName = async (req, res, next) => {
   try {
     const { idOrName } = req.params;
+    const mongoose = require("mongoose");
     const query = mongoose.Types.ObjectId.isValid(idOrName)
       ? { _id: idOrName }
       : { name: idOrName };

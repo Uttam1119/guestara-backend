@@ -1,0 +1,91 @@
+1. POST -> /api/categories
+
+body -> raw -> json :
+{
+  "name": "Beverages",
+  "image": "https://www.oysterenglish.com/images/beverage-types.jpg",
+  "description": "All kinds of drinks",
+  "taxApplicable": true,
+  "tax": 5,
+  "taxType": "percentage"
+}
+
+2. GET -> /api/categories
+
+3. GET -> /api/categories/{idOrName}
+
+4. PUT -> /api/categories/{id}
+
+body -> raw -> json :
+{
+  "description": "Updated Beverages category",
+  "tax": 10
+}
+
+5. POST -> /api/subcategories/category/{categoryId}
+
+body -> raw -> json :
+{
+  "name": "Soft Drinks",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Coca_Cola_Flasche_-_Original_Taste.jpg",
+  "description": "Cola, soda, etc."
+}
+
+6. GET -> /api/subcategories --> api to get all subcategories
+
+7. GET -> /api/subcategories/category/{categoryId} 
+
+8. GET -> /api/subcategories/{idOrName}
+
+9. PUT -> /api/subcategories/{id}
+
+body -> raw -> json:
+{
+  "description": "Updated soft drinks info",
+  "tax": 8
+}
+
+10. POST -> /api/items/category/{categoryId}
+
+body -> raw -> json:
+{
+  "subcategory": "", 
+  "name": "Chola",
+  "image": "https://www.shutterstock.com/image-photo/choley-chole-masala-chana-indian-600nw-2070426809.jpg",
+  "description": "Indian food item",
+  "taxApplicable": true,
+  "tax": 5,
+  "baseAmount": 50,
+  "discount": 10
+}
+
+11. GET -> /api/items
+
+12. GET -> /api/items/category/{categoryId}
+
+13. GET -> /api/items/subcategory/{subcategoryId} 
+for this, firstly add one item to existing subcategory
+
+    POST -> /api/items/category/{categoryId}
+    body -> raw -> json :
+    {
+  "subcategory": "690e241d2b6f81e57d75e62b", 
+  "name": "Coca-Cola",
+  "image": "https://growstar.in/wp-content/uploads/2021/07/51kQMEbZxL._SL1000_-min-1.jpg",
+  "description": "Indian food item",
+  "taxApplicable": true,
+  "tax": 5,
+  "baseAmount": 50,
+  "discount": 10
+}
+
+14. GET -> /api/items/{idOrName}
+
+15. PUT -> /api/items/{id}
+
+body -> raw -> json:
+{
+  "discount": 15
+}
+
+16. GET -> /api/items/search?q=coca
