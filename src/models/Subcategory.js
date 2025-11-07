@@ -10,7 +10,7 @@ const SubcategorySchema = new mongoose2.Schema(
     name: { type: String, required: true, trim: true },
     image: { type: String, default: "" },
     description: { type: String, default: "" },
-    taxApplicable: { type: Boolean }, // default handled in controller
+    taxApplicable: { type: Boolean },
     tax: { type: Number },
   },
   { timestamps: true }
